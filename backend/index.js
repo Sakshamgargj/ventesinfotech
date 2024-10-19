@@ -21,7 +21,13 @@ const app = express();
 
 // middleware
 app.use(express.json());
-app.use(cors());
+const corsConfig = {
+  origin:"*",
+  credential:true,
+  methods:["GET","POST","PUT","DELETE"]
+}
+app.options("",cors(corsConfig))
+app.use(cors(corsConfig));
 
 // run db
 ConnectDb();
