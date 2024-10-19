@@ -94,7 +94,7 @@ export default function Sidebar({sideMenu,setSideMenu}:IProps) {
                     )}
                     {menu.title === 'Online store' && (
                       <a
-                        href="https://ventesfrontend.vercel.app/"
+                        href="https://ventesinfotech.vercel.app/"
                         target="_blank"
                         className={`group cursor-pointer rounded-md relative text-black text-lg font-medium inline-flex items-center w-full transition-colors ease-in-out duration-300 px-5 py-[9px] mb-2 hover:bg-gray sidebar-link-active`}
                       >
