@@ -68,7 +68,7 @@ const ShopModel = ({ all_products }) => {
           data-bs-parent="#shop_model"
         >
           <div className="accordion-body">
-            <div className="shop__widget-search pt-10 pb-25">
+            {/* <div className="shop__widget-search pt-10 pb-25">
               <form onSubmit={handleSubmit}>
                 <div className="shop__widget-search-input">
                   <input
@@ -81,7 +81,7 @@ const ShopModel = ({ all_products }) => {
                   </button>
                 </div>
               </form>
-            </div>
+            </div> */}
             <div
               className="shop__widget-list"
               style={{

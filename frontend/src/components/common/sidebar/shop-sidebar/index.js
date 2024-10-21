@@ -21,11 +21,11 @@ const ShopSidebar = ({ all_products }) => {
       <div className="shop__widget tp-accordion">
         <ShopModel all_products={all_products} />
       </div>
-      <div className="shop__widget tp-accordion">
+      {/* <div className="shop__widget tp-accordion">
         <div className="accordion" id="shop_color">
           <ShopColor all_products={all_products} />
         </div>
-      </div>
+      </div> */}
       <div className="shop__widget tp-accordion">
         <div className="accordion" id="shop_price">
           <ShopPrice />
