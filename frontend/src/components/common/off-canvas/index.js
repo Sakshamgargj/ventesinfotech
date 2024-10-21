@@ -43,7 +43,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
               </div>
             </div>
             <div className="offcanvas__btn">
-              <a href="/" className="tp-btn-offcanvas">
+              <a href="#" className="tp-btn-offcanvas">
                 Getting Started <i className="fa-regular fa-chevron-right"></i>
               </a>
             </div>
