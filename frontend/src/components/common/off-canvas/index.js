@@ -43,7 +43,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
               </div>
             </div>
             <div className="offcanvas__btn">
-              <a href="#" className="tp-btn-offcanvas">
+              <a href="/" className="tp-btn-offcanvas">
                 Getting Started <i className="fa-regular fa-chevron-right"></i>
               </a>
             </div>
@@ -53,10 +53,10 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
             </div>
             <div className="offcanvas__contact">
               <p className="offcanvas__contact-call">
-                <a href="tel:+964-742-44-763">+964 742 44 763</a>
+                <a href="tel:+964-742-44-763">+91 96399 94069</a>
               </p>
               <p className="offcanvas__contact-mail">
-                <a href="mailto:info@harry.com">info@harry.com</a>
+                <a href="mailto:sales@ventesinfotech.com"> sales@ventesinfotech.com</a>
               </p>
             </div>
           </div>

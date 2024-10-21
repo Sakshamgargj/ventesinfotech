@@ -193,8 +193,7 @@ const ProductDetailsArea = ({ product }) => {
                 <h3 className="product__details-title">{title}</h3>
   
                 <p className="mt-20">
-                  Shop Harry.com for every day low prices. Free shipping on orders
-                  $35+ or Pickup In-store and get
+                  Shop ventesinfotech.com for Everyday Low prices.
                 </p>
   
                 {/* Product Details Price */}
@@ -202,7 +201,7 @@ const ProductDetailsArea = ({ product }) => {
                 {/* Product Details Price */}
   
                 {/* quantity */}
-                <ProductQuantity />
+                <ProductQuantity limit={quantity} />
                 {/* quantity */}
   
                 <div className="product__details-action d-flex flex-wrap align-items-center">
@@ -227,16 +226,16 @@ const ProductDetailsArea = ({ product }) => {
                     </span>
                   </button>
                 </div>
-                <div className="product__details-sku product__details-more">
+                {/* <div className="product__details-sku product__details-more">
                   <p>SKU:</p>
-                  <span>{sku}</span>
-                </div>
+                  {" "}<span>{sku}</span>
+                </div> */}
                 {/* ProductDetailsCategories */}
                 <ProductDetailsCategories name={product?.category?.name} />
                 {/* ProductDetailsCategories */}
   
                 {/* Tags */}
-                <ProductDetailsTags tag={tags} />
+                {/* <ProductDetailsTags tag={tags} /> */}
                 {/* Tags */}
   
                 <div className="product__details-share">

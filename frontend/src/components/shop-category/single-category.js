@@ -18,14 +18,14 @@ const SingleCategory = ({ item }) => {
                 .join("-")}`
             )
           }
-          style={{ cursor: "pointer" }}
+          style={{width: "280px", height: "180px", cursor: "pointer" }}
         >
           <Image
             src={item.img}
             alt="image"
             width={272}
-            height={181}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            height={180}
+            style={{ width: "250px", height: "150px", objectFit: "cover" }}
           />
         </a>
       </div>

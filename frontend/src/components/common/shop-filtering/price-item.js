@@ -26,13 +26,21 @@ const PriceItem = ({ id, min, max }) => {
       />
       {max < 200 ? (
         <label htmlFor={`higher-${id}`}>
-          ${min}.00 - ${max}.00
+          <span className="rupee-symbol">₹</span>{min}.00 - <span className="rupee-symbol">₹</span>{max}.00
         </label>
       ) : (
         <label htmlFor={`higher-${id}`}>
-          ${max}.00+
+          <span className="rupee-symbol">₹</span>{max}.00+
         </label>
       )}
+      <style jsx>{`
+        .rupee-symbol {
+          position: relative;
+          top: -2px; /* Moves the Rupee symbol slightly upwards */
+          font-size: 0.9em; /* Slightly smaller size for alignment */
+          margin-right: 2px; /* Adds a little space between the symbol and the number */
+        }
+      `}</style>
     </div>
   );
 };

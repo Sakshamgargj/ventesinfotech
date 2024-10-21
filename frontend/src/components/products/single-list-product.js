@@ -59,11 +59,10 @@ const SingleListProduct = ({ product }) => {
                 <Link href={`product-details/${_id}`}>{title}</Link>
               </h3>
               <div className="product__list-price">
-                <span className="product__list-ammount">${price}</span>
+                <span className="product__list-ammount"><span className="rupee-symbol">₹</span>{price}</span>
               </div>
               <p>
-                Shop Harry.com for every day low prices. Free shipping on orders
-                $35+ or Pickup In-store and get
+                Shop ventesinfotech.com for every day low prices.
               </p>
 
               <div className="product__list-action d-flex flex-wrap align-items-center">
@@ -107,6 +106,14 @@ const SingleListProduct = ({ product }) => {
             </div>
           </div>
         </div>
+        <style jsx>{`
+        .rupee-symbol {
+          position: relative;
+          top: -2px; /* Moves the Rupee symbol slightly upwards */
+          font-size: 0.9em; /* Slightly smaller size for alignment */
+          margin-right: 2px; /* Adds a little space between the symbol and the number */
+        }
+      `}</style>
       </div>
     </React.Fragment>
   );

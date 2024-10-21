@@ -3,7 +3,7 @@ import React from "react";
 const ProductCategories = () => {
   return (
     <div className="product__details-categories product__details-more">
-      <p>Categories:</p>
+      <p>Categories:</p>{" "}
       <span>
         <a href="#">iPhone Cases,</a>
       </span>

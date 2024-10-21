@@ -101,8 +101,7 @@ const ProductModal = () => {
             <div className="product__details-wrapper">
               <h3 className="product__details-title">{title}</h3>
               <p className="mt-20">
-                Shop Harry.com for every day low prices. Free shipping on
-                orders $35+ or Pickup In-store and get
+                Shop ventesinfotech.com for every day low prices.
               </p>
               {/* Price */}
               <OldNewPrice
@@ -144,7 +143,7 @@ const ProductModal = () => {
                 </Link>
               </div>
               <div className="product__details-sku product__details-more">
-                <p>SKU:</p>
+                <p>SKU:</p>{" "}
                 <span>{sku}</span>
               </div>
               {/* Product Categories */}

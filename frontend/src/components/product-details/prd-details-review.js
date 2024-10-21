@@ -62,7 +62,7 @@ const PrdDetailsReview = () => {
                 user={user_1}
                 name="Michelle Hunter"
                 date="August 8, 2022"
-                desc="I’m upgrading from a series 1, so it is a completely different
+                desc="I am upgrading from a series 1, so it is a completely different
                   watch. I am very satisfied with this purchase. Most of the
                   heart monitoring functions only work with people."
               />
@@ -70,7 +70,7 @@ const PrdDetailsReview = () => {
                 user={user_2}
                 name="Sean Hathaway"
                 date="August 10, 2022"
-                desc="I’m upgrading from a series 1, so it is a completely different
+                desc="I am upgrading from a series 1, so it is a completely different
                   watch. I am very satisfied with this purchase. Most of the
                   heart monitoring functions only work with people."
               />

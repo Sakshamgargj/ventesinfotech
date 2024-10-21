@@ -28,75 +28,69 @@ const HeroBanner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimationKey((prevKey) => prevKey + 1);
-    }, 7700); 
-
+    }, 7400);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section
       className="cta__area pt-50 pb-50 p-relative include-bg jarallax"
-      style={{ backgroundColor:"#fffff1" }}
+      style={{
+        background: "linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%)", // Updated background color with gradient
+      }}
     >
-    <div className="container mt-40" key={animationKey} >
-      <div className="row align-self-end">
-        <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 p-5 mt-5">
-          <h1 style={{ fontSize: "70px" }} className="slider__content-13 mt-80 animated-text">
-            <strong>Experience</strong>
+      <div className="container mt-40" key={animationKey}>
+        <div className="row align-self-end">
+          {/* Text Section */}
+          <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12  mt-5">
+            <h1 className="slider__content-13 mt-80 animated-text" style={{ fontSize: "clamp(2rem, 5vw, 70px)" }}>
+              <strong>Experience</strong>
+              <br />
+              <strong>the Power of</strong>
+              <br />
+              <strong style={{ fontSize: "clamp(2.5rem, 6vw, 80px)" }}>
+                <span style={{ color: "#3985ff" }}>Sound</span> and{" "}
+                <span style={{ color: "#3985ff" }}>Vision</span>
+              </strong>
+            </h1>
             <br />
-            <strong>the Power of</strong>
-            <br />
-            <strong  style={{ fontSize: "80px" }} >
-              <span style={{ color: "#3985ff" }}>Sound</span> and{" "}
-              <span style={{ color: "#3985ff" }}>Vision</span>
-            </strong>
-          </h1>
-          <br />
-          <div className="slider__btn-13 animated-button">
-            <Link href="/shop" className="tp-btn-border">
-              Shop Now
-              <span>
-                <RightArrow />
-              </span>
-            </Link>
+            <div className="slider__btn-13 animated-button">
+              <Link href="/shop" className="tp-btn-border">
+                Shop Now
+                <span>
+                  <RightArrow />
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
-        <div
-          className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3"
-          style={{
-            position: "relative",
-            height: "550px",
-          }}
-        >
-          {/* <Image
-              className="rounded-full"
-              src={img1}
-              style={{
-                position: "absolute",
-                marginTop:"40px",
-                width: "100%",
-                height: "550px",
-              }}
-            /> */}
-          {imageList.map((img, index) => (
-            <Image
-              key={index}
-              className="rounded-full"
-              src={img}
-              alt={`Image ${index + 1}`}
-              style={{
-                position: "absolute",
-                // top: 0,
-                // left: 0,
-                width: "100%",
-                marginTop:"40px",
-                height: "550px",
-                animation: `airdrop-image-pulse 2s ease-in-out forwards`,
-                animationDelay: `${index * 0.5}s`,
-                opacity: 1,
-              }}
-            />
-          ))}
+
+          {/* Image Section */}
+          <div
+            className="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 pt-3"
+            
+          >
+            <div style={{
+              position: "relative",
+              height: "clamp(300px, 50vw, 600px)",
+            }}>
+            {imageList.map((img, index) => (
+              <Image
+                key={index}
+                className="rounded-full"
+                src={img}
+                alt={`Image ${index + 1}`}
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  animation: `airdrop-image-pulse 2s ease-in-out forwards`,
+                  animationDelay: `${index * 0.5}s`,
+                  opacity: 1,
+                }}
+              />
+            ))}
+          </div>
+          </div>
         </div>
       </div>
 
@@ -114,8 +108,18 @@ const HeroBanner = () => {
             opacity: 1;
           }
         }
+
+        @media (max-width: 768px) {
+          .slider__content-13 {
+            font-size: 40px;
+            line-height: 1.2;
+          }
+          .cta__area {
+            padding-top: 20px;
+            padding-bottom: 20px;
+          }
+        }
       `}</style>
-    </div>
     </section>
   );
 };

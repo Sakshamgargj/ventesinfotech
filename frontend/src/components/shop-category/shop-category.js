@@ -36,7 +36,7 @@ const ShopCategoryArea = () => {
     ));
   }
   return (
-    <section className="product__category pt-100 pb-100">
+    <section className="product__category pt-20 pb-100">
       <div className="container">
         <div className="row">
           <div className="col-xxl-12">
