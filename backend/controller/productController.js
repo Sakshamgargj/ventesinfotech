@@ -10,6 +10,7 @@ module.exports.addProduct = async (req, res, next) => {
     const newProduct = new Product({
       ...req.body,
       relatedImages: imageURLs,
+      specification: req.body.specification, // Add the specification field to the product schema
     });
     await newProduct.save();
     const { _id: productId, brand, category } = newProduct;
