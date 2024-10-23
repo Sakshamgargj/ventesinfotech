@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 const valid = require("validator");
 const { ObjectId } = mongoose.Schema.Types;
 
+const specificationSchema = mongoose.Schema({
+  sKey:{
+    type:String
+  },
+  sValue:{
+    type:String
+  }
+})
+
 const productSchema = mongoose.Schema({
   sku: {
     type: String,
@@ -92,6 +101,9 @@ const productSchema = mongoose.Schema({
     default: 'active',
     enum: ['active', 'inActive'],
   },
+  specification: [
+    specificationSchema
+  ]
 },{
   timestamps: true
 })
