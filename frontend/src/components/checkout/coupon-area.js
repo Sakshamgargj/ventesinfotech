@@ -17,6 +17,7 @@ const CouponArea = (props) => {
                 <span
                   onClick={() => setCheckoutLogin(!checkoutLogin)}
                   id="showlogin"
+                  style={{color:"blue",fontSize:"17px"}}
                 >
                   Click here to login
                 </span>
@@ -24,10 +25,10 @@ const CouponArea = (props) => {
               {checkoutLogin && (
                 <div id="checkout-login" className="coupon-content">
                   <div className="coupon-info">
-                    <p className="coupon-text">
+                    {/* <p className="coupon-text">
                       Quisque gravida turpis sit amet nulla posuere lacinia.
                       Cras sed est sit amet ipsum luctus.
-                    </p>
+                    </p> */}
                     {/* form start */}
                     <LoginForm />
                     {/* form end */}
@@ -43,6 +44,7 @@ const CouponArea = (props) => {
                 <span
                   onClick={() => setCheckoutCoupon(!checkoutCoupon)}
                   id="showcoupon"
+                  style={{color:"blue",fontSize:"17px"}}
                 >
                   Click here to enter your code
                 </span>

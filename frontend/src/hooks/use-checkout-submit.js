@@ -99,10 +99,19 @@ const useCheckoutSubmit = () => {
       createPaymentIntent({
         price: parseInt(cartTotal),
       })
-        .then((data) => {
+      .then((data) => {
+        if (data && data.data && data.data.clientSecret) {
           setClientSecret(data.data.clientSecret);
-          console.log(data);
-        })
+        } else {
+          console.error("clientSecret is not present in the response", data);
+          notifyError("Failed to retrieve payment details. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during payment intent fetch:", error);
+        notifyError("There was an error processing the payment. Please try again.");
+      })
+      
         .then((error) => {
           console.log(error);
         });

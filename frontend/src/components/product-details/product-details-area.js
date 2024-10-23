@@ -10,6 +10,7 @@ import ProductDetailsCategories from "./product-details-categories";
 import ProductDetailsTags from "./product-details-tags";
 import { add_cart_product } from "src/redux/features/cartSlice";
 import { add_to_wishlist } from "src/redux/features/wishlist-slice";
+import codImg from "@assets/img/product/cod.png";
 
 const ProductDetailsArea = ({ product }) => {
   const {
@@ -225,6 +226,8 @@ const ProductDetailsArea = ({ product }) => {
                       Add To Wishlist
                     </span>
                   </button>
+                  <br/>
+                  <Image src={codImg} style={{padding:"2px",width:"100%",height:"30px"}} />
                 </div>
                 {/* <div className="product__details-sku product__details-more">
                   <p>SKU:</p>

@@ -13,13 +13,13 @@ import useCheckoutSubmit from "@hooks/use-checkout-submit";
 
 export default function Checkout() {
   const checkout_data = useCheckoutSubmit();
-  const router = useRouter();
-  useEffect(() => {
-    const isAuthenticate = localStorage.getItem("auth");
-    if(!isAuthenticate){
-      router.push("/login")
-    }
-  },[router])
+  // const router = useRouter();
+  // useEffect(() => {
+  //   const isAuthenticate = localStorage.getItem("auth");
+  //   if(!isAuthenticate){
+  //     router.push("/login")
+  //   }
+  // },[router])
   return (
     <Wrapper>
       <SEO pageTitle={"Checkout"} />
@@ -27,7 +27,7 @@ export default function Checkout() {
       <CartBreadcrumb title="Checkout" subtitle="Checkout" />
       <CouponArea {...checkout_data} />
       <CheckoutArea {...checkout_data} />
-      <ShopCta />
+      {/* <ShopCta /> */}
       <Footer />
     </Wrapper>
   );
