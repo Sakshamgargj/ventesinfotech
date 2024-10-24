@@ -11,6 +11,7 @@ import ProductCategory from "../../category/product-category";
 import Tags from "./tags";
 import FormField from "../form-field";
 import Colors from "./colors";
+import Specification from "./specification";
 
 const ProductSubmit = () => {
   const {
@@ -32,6 +33,8 @@ const ProductSubmit = () => {
     setRelatedImages,
     setColors,
     colors,
+    specification,
+    setSpecification
   } = useProductSubmit();
 
   console.log('related image',relatedImages)
@@ -50,7 +53,8 @@ const ProductSubmit = () => {
               errors={errors}
             />
             <DescriptionTextarea register={register} errors={errors} />
-          </div>
+            <Specification specification={specification} setSpecification={setSpecification}  />
+            </div>
 
           <div className="bg-white px-8 py-8 rounded-md mb-6">
             <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-6">

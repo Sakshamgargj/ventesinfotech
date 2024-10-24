@@ -15,7 +15,7 @@ import { Dashboard, Mobile, Website } from "@svg/index";
     icon: <Mobile />,
     project: '5k',
     title: "Lovely Customer",
-    url:""
+    url:"/faq"
   },
   {
     icon: <Dashboard />,

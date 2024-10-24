@@ -1,4 +1,7 @@
-
+interface Specification {
+  sKey: string;
+  sValue: string;
+}
 
 export interface IProduct {
   _id: string;
@@ -25,6 +28,7 @@ export interface IProduct {
   unit: string;
   quantity: number;
   colors: string[];
+  specification: Specification[];
   type?: string;
   itemInfo?: string;
   status: string;
@@ -59,6 +63,7 @@ export interface IAddProduct {
   unit: string;
   quantity: number;
   colors: string[];
+  specification: Specification[];
   type?: string;
   itemInfo?: string;
   status?: string;

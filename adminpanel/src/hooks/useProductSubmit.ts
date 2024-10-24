@@ -12,6 +12,11 @@ type IBCType = {
   id: string;
 };
 
+interface Specification {
+  sKey: string;
+  sValue: string;
+}
+
 const useProductSubmit = () => {
   const [img, setImg] = useState<string>("");
   const [relatedImages, setRelatedImages] = useState<string[]>([]);
@@ -21,6 +26,7 @@ const useProductSubmit = () => {
   const [children, setChildren] = useState<string>('');
   const [tags, setTags] = useState<string[]>([]);
   const [colors, setColors] = useState<string[]>([]);
+  const [specification, setSpecification] = useState<Specification[]>([]); // updated type
   const [isSubmitted, setIsSubmitted] = useState<boolean>(true);
 
   const router = useRouter();
@@ -64,8 +70,9 @@ const useProductSubmit = () => {
       unit: data.unit,
       quantity: Number(data.quantity),
       colors: colors,
+      specification: specification, // updated specification field
     };
-    console.log('productData-------------------..>', productData)
+    console.log('productData-------------------..>', productData);
     if (!img) {
       return notifyError("Product image is required");
     }
@@ -73,7 +80,7 @@ const useProductSubmit = () => {
       return notifyError("Category is required");
     }
     if (Number(data.discount) > Number(data.price)) {
-      return notifyError("Product price must be gether than discount");
+      return notifyError("Product price must be greater than discount");
     } else {
       const res = await addProduct(productData);
 
@@ -92,7 +99,7 @@ const useProductSubmit = () => {
       else {
         notifySuccess("Product created successFully");
         setIsSubmitted(true);
-        router.push('/product-grid')
+        router.push('/product-grid');
       }
     }
   };
@@ -116,6 +123,7 @@ const useProductSubmit = () => {
       unit: data.unit,
       quantity: Number(data.quantity),
       colors: colors,
+      specification: specification, // updated specification field
     };
 
     const res = await editProduct({ id: id, data: productData })
@@ -161,6 +169,8 @@ const useProductSubmit = () => {
     isSubmitted,
     relatedImages,
     colors,
+    specification,
+    setSpecification,
   };
 };
 
