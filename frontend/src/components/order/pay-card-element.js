@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { CardElement } from "@stripe/react-stripe-js";
+import PaymentButton from "@components/PaymentButton";
 
 const PaymentCardElement = ({ stripe, cardError, cart_products,isCheckoutSubmit }) => {
+  const handlePaymentSuccess = (response) => {
+    console.log('Payment successful:', response);
+    // Handle success (e.g., redirect to success page, update order status)
+  };
+  
   return (
     <div className="my-2">
       <CardElement
@@ -28,6 +34,11 @@ const PaymentCardElement = ({ stripe, cardError, cart_products,isCheckoutSubmit 
         >
           Place order
         </button>
+        <PaymentButton
+        amount={1000}
+        orderId="123"
+        onSuccess={handlePaymentSuccess}
+      />
       </div>
       {cardError && (
         <p className="mt-15" style={{ color: "red" }}>
