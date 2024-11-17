@@ -69,6 +69,7 @@ const GlobalImgUpload = ({setImage,isSubmitted,default_img,image,setIsSubmitted}
       <span className="text-tiny text-center w-full inline-block mb-3">
         (Only png* jpg* jpeg* webp/ will be accepted)
       </span>
+      <p style={{fontSize:"10px"}} className="text-rose-900 font-bold">NOTE: Size- 640px X 360px</p>
       <div className="">
         <input
           onChange={handleImageUpload}

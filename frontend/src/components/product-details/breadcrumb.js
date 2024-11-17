@@ -21,7 +21,7 @@ const ProductDetailsBreadcrumb = ({title}) => {
                   <i className="fa-regular fa-angle-right"></i>
                 </span>
                 <span>
-                  <a href="#">Products</a>
+                  <Link href="/shop">Products</Link>
                 </span>
                 <span className="dvdr">
                   <i className="fa-regular fa-angle-right"></i>

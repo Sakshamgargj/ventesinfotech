@@ -1,5 +1,6 @@
 import React from "react";
 import { Home } from "@svg/index";
+import Link from "next/link";
 
 const ShopBreadcrumb = () => {
   return (
@@ -13,7 +14,7 @@ const ShopBreadcrumb = () => {
                   <Home />
                 </span>
                 <span>
-                  <a href="#">Home</a>
+                  <Link href="/">Home</Link>
                 </span>
                 <span className="dvdr">
                   <i className="fa-regular fa-angle-right"></i>

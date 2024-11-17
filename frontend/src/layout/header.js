@@ -23,10 +23,11 @@ const Header = ({ style_2 = false }) => {
     <>
       <header>
         <div className={`header__area ${style_2 ? "" : "header__transparent"}`}>
-          <div
-            className={`header__bottom-13 header__padding-7 header__black-3 header__bottom-border-4 ${
-              style_2 ? "header__bottom-13-white" : "grey-bg-17"
-            } header__sticky ${sticky ? "header-sticky" : ""}`}
+          <div style={{
+            background: "linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%)", // Updated background color with gradient
+          }}
+            className={`header__bottom-13 header__padding-7 header__black-3 header__bottom-border-4 ${style_2 ? "header__bottom-13-white" : "grey-bg-17"
+              } header__sticky ${sticky ? "header-sticky" : ""}`}
             id="header-sticky"
           >
             <div className="container-fluid">
@@ -35,7 +36,7 @@ const Header = ({ style_2 = false }) => {
                   <div className="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-5 col-8">
                     <div>
                       <Link href="/">
-                        <Image style={{width:'162px' , height:"44px"}} src={logo11} alt="logo" />
+                        <Image style={{ width: '162px', height: "44px" }} src={logo11} alt="logo" />
                       </Link>
                     </div>
                   </div>

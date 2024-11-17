@@ -126,7 +126,9 @@ const useProductSubmit = () => {
       specification: specification, // updated specification field
     };
 
+    console.log("Edit on :")
     const res = await editProduct({ id: id, data: productData })
+    console.log("Edit done :")
     if ("error" in res) {
       if ("data" in res.error) {
         const errorData = res.error.data as { message?: string, errorMessages?: { path: string, message: string }[] };

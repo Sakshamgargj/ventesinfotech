@@ -15,19 +15,25 @@ const userOrderRoute = require("./routes/userOrderRoute");
 const cloudinaryRoutes = require("./routes/cloudinaryRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const brandRoutes = require("./routes/brandRoutes");
+const blogRoute = require("./routes/blogRoute")
+const paymentRoute = require("./routes/paymentRoutes")
 
 // app init
 const app = express();
 
 // middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const corsConfig = {
-  origin:"*",
-  credential:true,
-  methods:["GET","POST","PUT","DELETE"]
-}
-app.options("",cors(corsConfig))
+  origin: "*",
+  credentials: true,  // fixed typo from `credential` to `credentials`
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+};
+
+// Ensure CORS is properly set up for all requests, including preflight OPTIONS
 app.use(cors(corsConfig));
+app.options("*", cors(corsConfig));
 
 // run db
 ConnectDb();
@@ -42,15 +48,18 @@ app.use('/api/order', orderRouter);
 app.use('/api/user-order', userOrderRoute);
 app.use("/api/cloudinary", cloudinaryRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/blog", blogRoute);
+app.use("/api/payments", paymentRoute);
 
 // root route
 app.get("/", (req, res) => res.send("Apps worked successfully"));
 
-const PORT = secret.port ;
+const PORT = secret.port;
 
 // global error handler
 app.use(globalErrorHandler);
-//* handle not found
+
+// handle not found
 app.use((req, res, next) => {
   res.status(404).json({
     success: false,
@@ -65,4 +74,4 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

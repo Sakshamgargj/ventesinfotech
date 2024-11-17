@@ -3,7 +3,7 @@ export default function BackToTop(value) {
   if (result) {
     document.addEventListener("scroll", () => {
       if (
-        window.scrollY > 200
+        window.scrollY > -100
       ) {
         result.classList.add('back-to-top-btn-show')
       } else {

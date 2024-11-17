@@ -39,5 +39,6 @@ export const apiSlice = createApi({
     "AllStaff",
     "Stuff",
     "SingleProduct",
+    "Blog",         // Add this line
   ],
 });

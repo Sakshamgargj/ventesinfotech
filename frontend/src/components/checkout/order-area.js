@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import OrderDetails from "./order-details";
 import PaymentCardElement from "@components/order/pay-card-element";
 import OrderSingleCartItem from "./order-single-cart-item";
+import PaymentButton from "@components/PaymentButton";
 
 const OrderArea = ({
-  stripe,
+  // stripe,
   error,
   register,
   errors,
@@ -18,6 +19,13 @@ const OrderArea = ({
   isCheckoutSubmit,
 }) => {
   const { cart_products } = useSelector((state) => state.cart);
+  const handlePaymentSuccess = (response) => {
+    console.log('Payment successful:', response);
+    // Handle success (e.g., redirect to success page, update order status)
+  };
+  // function cartrs(){
+  //   alert(cartTotal)
+  // }
   return (
     <div className="your-order mb-30 ">
       <h3>Your order</h3>
@@ -69,18 +77,24 @@ const OrderArea = ({
                 <span className="accordion-btn"></span>
               </button>
             </h2>
+            {/* <button onClick={cartrs}>Click</button> */}
             <div
               id="bankOne"
               className="accordion-collapse collapse show"
               aria-labelledby="checkoutOne"
               data-bs-parent="#checkoutAccordion"
             >
-              <div className="accordion-body">
-                <PaymentCardElement
+              <div className="accordion-body bg-primary">
+                {/* <PaymentCardElement
                   stripe={stripe}
                   cardError={error}
                   cart_products={cart_products}
                   isCheckoutSubmit={isCheckoutSubmit}
+                /> */}
+                <PaymentButton
+                  amount={cartTotal}
+                  orderId="123"
+                  onSuccess={handlePaymentSuccess}
                 />
               </div>
             </div>

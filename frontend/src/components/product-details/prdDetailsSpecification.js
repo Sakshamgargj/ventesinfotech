@@ -7,7 +7,6 @@ const PrdDetailsSpecification = ({ product }) => {
       <div className="row">
         <div className="col-lg-12">
           <div className="product__details-specifications-content">
-            <h4 className="specifications-title">Specifications</h4>
             <div className="specifications-table">
               {product?.specification.map((e, index) => (
                 <div className="specification-row" key={index}>

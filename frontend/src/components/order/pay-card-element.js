@@ -38,6 +38,7 @@ const PaymentCardElement = ({ stripe, cardError, cart_products,isCheckoutSubmit 
         amount={1000}
         orderId="123"
         onSuccess={handlePaymentSuccess}
+        disabled={cart_products.length === 0 || isCheckoutSubmit}
       />
       </div>
       {cardError && (

@@ -28,7 +28,7 @@ const HeroBanner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimationKey((prevKey) => prevKey + 1);
-    }, 7400);
+    }, 7500);
     return () => clearInterval(interval);
   }, []);
 
@@ -113,6 +113,7 @@ const HeroBanner = () => {
           .slider__content-13 {
             font-size: 40px;
             line-height: 1.2;
+            padding:10px
           }
           .cta__area {
             padding-top: 20px;

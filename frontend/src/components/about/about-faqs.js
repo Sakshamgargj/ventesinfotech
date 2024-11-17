@@ -40,7 +40,7 @@ const AboutFaqs = () => {
           <div className="faq__video-btn">
             <a
               style={{ cursor: "pointer" }}
-              onClick={() => setIsVideoOpen(true)}
+              // onClick={() => setIsVideoOpen(true)}
               className="tp-pulse-border popup-video"
             >
               <Play />

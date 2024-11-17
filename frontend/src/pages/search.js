@@ -18,7 +18,7 @@ export default function Search({ query }) {
   const searchText = query?.query;
   const { data: products, isError, isLoading } = useGetShowingProductsQuery();
   const [shortValue, setShortValue] = useState("");
-  const perView = 8;
+  const perView = 12;
   const [next, setNext] = useState(perView);
 
   // selectShortHandler
@@ -28,7 +28,7 @@ export default function Search({ query }) {
 
   //   handleLoadMore
   const handleLoadMore = () => {
-    setNext((value) => value + 4);
+    setNext((value) => value + 8);
   };
 
   // decide what to render
@@ -85,7 +85,7 @@ export default function Search({ query }) {
                       <div className="shop__sort-select">
                         <NiceSelect
                           options={[
-                            { value: "Short By Price", text: "Short By Price" },
+                            { value: "Short By Price", text: "Sort By search" },
                             {
                               value: "Price low to high",
                               text: "Price low to high",
@@ -136,7 +136,7 @@ export default function Search({ query }) {
       <Header style_2={true} />
       <BreadcrumbTwo title="Search Result" />
       {content}
-      <ShopCta />
+      {/* <ShopCta /> */}
       <Footer />
     </Wrapper>
   );

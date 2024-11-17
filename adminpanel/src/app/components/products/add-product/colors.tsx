@@ -14,13 +14,13 @@ const Colors = ({ colors, setColors, default_value }: IPropType) => {
   }, [default_value, setColors]);
   return (
     <div className="mb-5 tp-product-tags">
-      <TagsInput
+      {/* <TagsInput
         value={colors}
         onChange={setColors}
         name="colors"
         placeHolder="enter colors"
       />
-      <em>press enter to add new color</em>
+      <em>press enter to add new color</em> */}
     </div>
   );
 };

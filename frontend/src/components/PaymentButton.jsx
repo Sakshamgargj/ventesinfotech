@@ -16,7 +16,7 @@ export default function PaymentButton({ amount, orderId, onSuccess }) {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: order.currency,
-        name: 'Your Company Name',
+        name: 'Ventes Infotech',
         description: `Order #${orderId}`,
         order_id: order.id,
         handler: async function (response) {
@@ -30,6 +30,7 @@ export default function PaymentButton({ amount, orderId, onSuccess }) {
           if (verification.verified) {
             onSuccess(response);
           } else {
+            // alert(verification.verified)
             alert('Payment verification failed');
           }
         },
@@ -59,7 +60,7 @@ export default function PaymentButton({ amount, orderId, onSuccess }) {
       <button
         onClick={handlePayment}
         disabled={loading}
-        className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
+        className="bg-blue-500 text-white px-4 py-2 rounded "
       >
         {loading ? 'Processing...' : 'Pay Noww'}
       </button>

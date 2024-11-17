@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(true); // Controls popup visibility
@@ -17,6 +17,11 @@ const Popup = () => {
       alert("Please enter a valid email");
     }
   };
+  useEffect(()=>{
+    if(showPopup==false){
+      setShowPopup(false);
+    }
+  },[showPopup])
 
   return (
     showPopup && (
@@ -61,7 +66,7 @@ const Popup = () => {
           </button>
           <div>
             <h2 style={{ color: "#3985ff", marginBottom: "10px" }}>
-              DAILY PROMOTION
+              DAILY OFFERS
             </h2>
             <p style={{ marginBottom: "20px" }}>SIGN UP FOR NEWSLETTER</p>
             <form onSubmit={handleSubscribe}>

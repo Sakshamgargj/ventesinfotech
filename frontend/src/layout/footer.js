@@ -68,10 +68,10 @@ const Footer = () => {
                   col_3="2"
                   title="Company"
                   contents={[
-                    { url: "#", title: "About us" },
+                    { url: "about", title: "About us" },
                     // { url: "#", title: "Careers" },
                     // { url: "#", title: "Store Locations" },
-                    { url: "#", title: "Our Blog" },
+                    { url: "blog", title: "Our Blog" },
                     // { url: "#", title: "Reviews" },
                   ]}
                 />
@@ -81,11 +81,12 @@ const Footer = () => {
                   col_3="3"
                   title="Shop"
                   contents={[
-                    { url: "#", title: "Game & Video" },
-                    { url: "#", title: "Phone &Tablets" },
-                    { url: "#", title: "Computers & Laptop" },
-                    { url: "#", title: "Sport Watches" },
-                    { url: "#", title: "Discounts" },
+                    { url: "shop?category=av-racks", title: "AV Racks" },
+                    { url: "shop?category=speaker-sounds", title: "Speaker Sounds" },
+                    { url: "shop?category=keyboard", title: "Keyboardd" },
+                    { url: "shop?category=mouse", title: "Mouse" },
+                    { url: "shop?category=spotlight-", title: "Spotlight" },
+                    { url: "shop?category=printers", title: "Printers"}
                   ]}
                 />
                 <SingleWidget
@@ -94,11 +95,11 @@ const Footer = () => {
                   col_3="4"
                   title="Support"
                   contents={[
-                    { url: "", title: "FAQs" },
+                    { url: "faq", title: "FAQs" },
                     // { url: "", title: "Reviews" },
-                    { url: "", title: "Contact Us" },
-                    { url: "", title: "Shipping" },
-                    { url: "", title: "Returns" },
+                    { url: "contact", title: "Contact Us" },
+                    // { url: "", title: "Shipping" },
+                    // { url: "", title: "Returns" },
                   ]}
                 />
 
@@ -107,10 +108,10 @@ const Footer = () => {
                     <h3 className="footer__widget-title">Talk To Us</h3>
 
                     <div className="footer__widget-content">
-                      <p className="footer__text">
+                      {/* <p className="footer__text">
                         Find a location nearest you. See{" "}
                         <a href="#">Our Stores</a>
-                      </p>
+                      </p> */}
                       <div className="footer__contact">
                         <div className="footer__contact-call">
                           <span>
@@ -135,16 +136,19 @@ const Footer = () => {
             <div className="container">
               <div className="footer__bottom-inner">
                 <div className="row">
-                  <div className="col-sm-6">
-                    <div className="footer__copyright">
-                      <CopyrightText />
+                  <div className="col-sm-12">
+                    <div className="footer__copyright text-center ">
+                      <p className="text-center">
+                        Copyright © {new Date().getFullYear()} by <Link href="/">Mystic Grafix</Link>. {' '}
+                        All rights reserved.
+                      </p>
                     </div>
                   </div>
-                  <div className="col-sm-6">
+                  {/* <div className="col-sm-6">
                     <div className="footer__payment text-sm-end">
                       <Image src={payment} alt="payment" />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

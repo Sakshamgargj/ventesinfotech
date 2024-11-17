@@ -68,6 +68,7 @@ const ProductImgUpload = ({
           >
             Upload Image
           </label>
+          <p style={{fontSize:"10px"}} className="text-rose-900 font-bold mt-2">NOTE: Size- 256px X 256px</p>
         </div>
       </div>
     </div>

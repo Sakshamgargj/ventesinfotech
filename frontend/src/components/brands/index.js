@@ -77,13 +77,7 @@ const brand_1_data = [
   { brand: brand_8 },
   { brand: brand_9 },
   { brand: brand_10 },
-  { brand: brand_11 },
-  { brand: brand_12 },
-  { brand: brand_13 },
-  { brand: brand_14 },
-  { brand: brand_15 },
-  { brand: brand_16 },
-  { brand: brand_33 },
+  { brand: brand_11 }
 ];
 const brand_2_data = [
   { brand: brand_17 },
@@ -97,11 +91,19 @@ const brand_2_data = [
   { brand: brand_26 },
   { brand: brand_27 },
   { brand: brand_28 },
+];
+const brand_3_data = [
+  { brand: brand_12 },
+  { brand: brand_13 },
+  { brand: brand_14 },
+  { brand: brand_15 },
+  { brand: brand_16 },
+  { brand: brand_33 },
   { brand: brand_29 },
   { brand: brand_30 },
   { brand: brand_31 },
   { brand: brand_32 },
-  { brand: brand_34 },
+  { brand: brand_34 }
 ];
 
 const Brands = () => {
@@ -157,7 +159,7 @@ const Brands = () => {
               <div className={`brand__slider-5`}>
                 <div className="brand__slider-5">
                   <Slider {...settings_1} className="brand__slider-active-5">
-                    {brand_1_data.map((brand, i) => (
+                    {brand_3_data.map((brand, i) => (
                       <div key={i} className="brand__item-5">
                         <Image style={{width:"200px",height:"100px"}} src={brand.brand} alt="brand" />
                       </div>

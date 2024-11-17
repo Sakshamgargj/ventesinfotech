@@ -12,8 +12,10 @@ const createOrder = async (req, res) => {
       currency: 'INR',
       receipt: 'order_' + Date.now(),
     };
-
+    
+    console.log("Sending Details");
     const order = await razorpay.orders.create(options);
+    console.log("Recvd:" + order);
     res.status(200).json(order);
   } catch (error) {
     console.error('Error creating order:', error);
@@ -28,7 +30,7 @@ const verifyPayment = async (req, res) => {
       razorpay_payment_id,
       razorpay_signature
     } = req.body;
-
+    console.log("BODY : ",req.body)
     // Verify the payment signature
     const body = razorpay_order_id + '|' + razorpay_payment_id;
     const crypto = require('crypto');

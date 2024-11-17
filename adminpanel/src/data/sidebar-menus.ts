@@ -84,6 +84,12 @@ const sidebar_menu: Array<ISidebarMenus> = [
       { title: "Forgot Password", link: "/forgot-password" }
     ],
   },
+  {
+    id: 11,
+    icon: Pages,
+    link: "/blog",
+    title: "Blog",
+  },
 ];
 
 export default sidebar_menu;

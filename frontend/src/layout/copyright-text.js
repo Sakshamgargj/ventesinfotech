@@ -3,8 +3,8 @@ import React from "react";
 
 const CopyrightText = () => {
   return (
-    <p>
-      Copyright © {new Date().getFullYear()} by <Link href="/">Ventes Infotech</Link> {' '}
+    <p className="text-center">
+      Copyright © {new Date().getFullYear()} by <Link href="/">Mystic Grafix</Link>. {' '}
       All rights reserved.
     </p>
   );
