@@ -25,15 +25,28 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const corsConfig = {
-  origin: "*",
-  credentials: true,  // fixed typo from `credential` to `credentials`
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-};
+const allowedOrigins = [
+  "https://ventesinfotech-3rrh.vercel.app",
+  "https://ventesinfotech.vercel.app",
+  // "http://localhost:5173",
+  // "http://localhost:5174",
+  // "http://localhost:5175",
+];
 
-// Ensure CORS is properly set up for all requests, including preflight OPTIONS
-app.use(cors(corsConfig));
-app.options("*", cors(corsConfig));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+    allowedHeaders: "Content-Type, Authorization",
+  })
+);
 
 // run db
 ConnectDb();
